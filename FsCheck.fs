@@ -75,10 +75,6 @@ let monotonicDecreasing f x y = List.contains <| compare (f x) (f y) <| [0; comp
 /// quickCheck $ monotonicDecreasing' (-1)
 let monotonicDecreasing' f x y = compare (f x) (f y) = compare y x
 
-
-
-
-
 /// Checks whether an binary operator is associative.
 /// a + (b + c) = (a + b) + c
 /// quickCheck $ associative (+)
