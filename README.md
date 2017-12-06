@@ -43,3 +43,22 @@ Can be tested as:
 let ``Inverts Property`` i =
     inverts (fun x -> x - 2) ((+) 2) i
 ```
+
+## Commutative
+Two functions can be executed in different orders and still produce the same result.
+
+```fsharp
+/// Checks whether two functions are commutative (endomorphism in relation to a unary operator).
+/// a * b = b * a
+/// quickCheck $ commutative (+)
+let commutative f g = (f >> g) <=> (g >> f)
+```
+
+Can be tested as:
+
+```fsharp
+[<Property>]
+let ``Take Map Commutative Property`` xs =
+    xs <> [] ==> lazy
+    commutative (List.take 1) (List.map ((+) 1)) xs
+```
