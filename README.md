@@ -19,10 +19,27 @@ let (<=>) f g x = f x .=. g x
 let idempotent f = f <=> (f >> f)
 ```
 
-Can be tested like:
+Can be tested as:
 
 ```fsharp
 [<Property>] 
 let ``Idepotent Property`` i = 
     idempotent abs i
+```
+
+## Inverts
+One function is the inverse of another function.
+
+```fsharp
+/// Checks whether a function is invariant over an other function.
+/// quickCheck $ length `invariatesOver` reverse
+let invariates f g = g >> f <=> f
+```
+
+Can be tested as:
+
+```fsharp
+[<Property>]
+let ``Inverts Property`` i =
+    inverts (fun x -> x - 2) ((+) 2) i
 ```
