@@ -1,6 +1,5 @@
 module FsCheck
 
-open FsCheck.Xunit
 open FsCheck
 
 /// Defines extensional equality.  This allows concise, point-free, definitions of laws.
