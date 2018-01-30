@@ -1,4 +1,4 @@
-# FsCheck.Extras
+# FsCheck.Properties
 This repository contains some basic Property Functions.
 
 Some examples:
