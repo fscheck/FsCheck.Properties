@@ -31,9 +31,10 @@ let ``Idepotent Property`` i =
 One function is the inverse of another function.
 
 ```fsharp
-/// Checks whether a function is invariant over an other function.
-/// quickCheck $ length `invariatesOver` reverse
-let invariates f g = g >> f <=> f
+/// Checks whether a function is the inverse of another function.
+/// f(g(x)) = x
+/// quickCheck $ (`div` 2) `inverts` (*2)
+let inverts f g = f >> g <=> id
 ```
 
 Can be tested as:
