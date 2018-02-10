@@ -23,7 +23,7 @@ Can be tested as:
 
 ```fsharp
 [<Property>] 
-let ``Idepotent Property`` i = 
+let ``Idempotent Property`` i = 
     idempotent abs i
 ```
 
